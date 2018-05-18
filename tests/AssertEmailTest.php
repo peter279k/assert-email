@@ -3,9 +3,9 @@
 namespace Tests\albertcolom\Assert;
 
 use albertcolom\Assert\AssertEmail;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class AssertEmailTest extends PHPUnit_Framework_TestCase
+class AssertEmailTest extends TestCase
 {
     /**
      * @test
@@ -122,5 +122,13 @@ class AssertEmailTest extends PHPUnit_Framework_TestCase
     public  function itShouldThrowInvalidArgumentExceptionWhenGetTemporalMail()
     {
         AssertEmail::temporalMail('test@yopmail.com');
+    }
+
+    /**
+     * @test
+     */
+    public  function itShouldReturnTrueOnValidEmailAddress()
+    {
+        $this->assertTrue(AssertEmail::temporalMail('peter279k@gmail.com'));
     }
 }
